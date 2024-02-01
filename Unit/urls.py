@@ -6,7 +6,6 @@ from . import views
 app_name = 'Unit'
 
 urlpatterns = [
-    # path('', vi)
     path('', views.home, name='home' ),
 ]
 
