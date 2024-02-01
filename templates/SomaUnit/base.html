@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Your Project Title{% endblock %}</title>
+    <!-- Include your CSS files here -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+   
+</head>
+<body>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Include your JavaScript files here -->
+
+</body>
+</html>

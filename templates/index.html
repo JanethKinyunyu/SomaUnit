@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Student Results - Home{% endblock %}
+
+{% block content %}
+    <h1>Student Results System</h1>
+    <p>Welcome to the Student Results System. Here are some quick links:</p>
+
+    <ul>
+        <li><a href="{% url 'view_results' %}">View Results</a></li>
+        <li><a href="{% url 'add_result' %}">Add Result</a></li>
+        <li><a href="{% url 'student_profile' %}">Student Profile</a></li>
+    </ul>
+{% endblock %}
