@@ -1,0 +1,3 @@
+#libraries i used
+Django
+mysqlclient
