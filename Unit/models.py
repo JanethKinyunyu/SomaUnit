@@ -2,6 +2,9 @@ from django.contrib.auth.models import User
 from django.db import models
 
 class Student(models.Model):
+    first_name = models.CharField(max_length=255)
+    Middle_name = models.CharField(max_length=255)
+    Last_name = models.CharField(max_length=255)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     student_id = models.CharField(max_length=10, unique=True, editable=False)
     
