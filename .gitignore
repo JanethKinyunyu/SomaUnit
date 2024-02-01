@@ -1,0 +1,8 @@
+# Ignore all migrations
+**/migrations/
+*.pyc
+__pycache__/
+
+
+# Ignore media files
+media/
