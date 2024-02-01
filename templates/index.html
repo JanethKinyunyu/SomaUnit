@@ -1,14 +1,39 @@
-{% extends 'base.html' %}
-
-{% block title %}Student Results - Home{% endblock %}
+{% extends 'SomaUnit/base.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>Student Results System</h1>
-    <p>Welcome to the Student Results System. Here are some quick links:</p>
 
-    <ul>
-        <li><a href="{% url 'view_results' %}">View Results</a></li>
-        <li><a href="{% url 'add_result' %}">Add Result</a></li>
-        <li><a href="{% url 'student_profile' %}">Student Profile</a></li>
-    </ul>
+<main >
+    <div class="container">
+        <div class="sections">
+            <div class="section">
+                <section class="hero">
+                    <h2>Welcome to Soma Unit.</h2>
+                    <p>Whether you're a student looking for academic resources or an educator seeking tools to enhance the learning experience,we've got you covered. Join us on a journey of knowledge, collaboration, and growth.</p>
+                    <a href="HTML/form.html" class="cta-button">Sign Up</a>
+                  </section>
+            </div>
+            <div class="section">
+                
+              <section id="features" class="features">
+                <h3>Welcome to the Student Results System. Here are some quick links:</h3>
+                <ul>
+                  <li>View Results.</li>
+                  <li>Add Results.</li>
+                  <li>Student'sProfile.</li>
+      
+                </ul>
+              </section>
+            </div>
+            <div class="section">
+              <section id="about" class="about">
+                <h3>About Us</h3>
+                <p>Some information about the Soma Unit, its purpose, and the team behind it.</p>
+              </section>
+            </div>
+      
+        </div>
+    </div>
+</main>
+  
 {% endblock %}

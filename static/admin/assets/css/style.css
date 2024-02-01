@@ -1,44 +1,228 @@
-/* Reset some default styles */
-body, h1, p, ul, li {
-    margin: 0;
+
+.background{
+    background-color: #393b41;
+}
+
+.center {  
+    text-align: center;  
+    color: blue;  
+}  
+
+.p{
+    text-align: center;
+    font-size: large;
+    margin-top: 50px;  
+    margin-bottom: 50px;  
+    margin-right: 100px;  
+    margin-left: 100px; 
+
+}
+
+body{
+    background-image: url('../images/bg.jpeg');
+    background-size:auto;
+    background-position: center;
+    font-family: arial, sans-serif;
+
+}
+
+/* body.others {
+    background-color: #073e45;
+} */
+
+/* Header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+/* Logo styling */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: oblique;
+}
+
+/* Navigation styling */
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
     padding: 0;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+nav ul li {
+    margin: 0 10px;
 }
 
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
+nav ul li a {
+    color: #fff;
+    text-decoration:wavy;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+/*footer styling*/
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    width: 100%;
+}
+
+/* Style the hero section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero h2 {
+    font-size: 4.5em;
+    margin-bottom: 10px;
+    color: #acd41c;
+    font-style: oblique;
+  }
+  
+  .hero p {
+    font-size: 2em;
+    color: #acd41c;
+    margin-bottom: 40px;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #acd41c;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-color: #acd41c;
+    color:#acd41c;
+    border: 2px solid;
+  }
+  
+  /* Style the features section */
+  .features {
+    padding: 80px 20px;
+ ;
+  }
+  
+  .features h3 {
+    text-align: center;
+    color: #acd41c;
+  }
+  
+  .features ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    color: rgb(202, 59, 181);
+  }
+  
+  .features li {
+    text-align: center;
+    width: 30%;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the about section */
+  .about {
+    text-align: center;
+    padding: 80px 20px;
+    color:#acd41c;
+  }
+
+  .container {
+    width: 100%; 
+    overflow-x: hidden; 
+  }
+  
+  /* Create a wrapper for sections */
+  .sections {
+    display: flex;
+    width: 300%; 
+    transition: transform 0.5s ease;
+  }
+  
+  /* Create sections */
+  .section {
+    flex: 1;
+    width: 100vw;
+  }
+
+  /* CSS styles for the profile page */
+.user-profile {
+    margin: 20px;
+    padding: 20px;
+    background-color: #acd41c;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.basic-info,
+.contact-details {
+    width: 85%;
+    margin-bottom: 130px;
+    display:block;
+}
+
+.user {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/*css for dashboard*/
+.stats, .workouts {
+    margin-bottom: 40px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.stat-box, .workout-item {
+    width: 140px;
+    padding: 10px;
+    background-color: #acd41c;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 1px;
+    
+}
+
+.workout-list {
+    /* Styles for workout list container */
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
 }
 
 h1 {
-    color: #333;
-}
-
-p {
-    color: #666;
-}
-
-ul {
-    list-style: none;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 20px;
 }
