@@ -16,6 +16,7 @@ class Teacher(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    is_staff = models.BooleanField(default=True)
 
     def __str__(self):
         return self.user.username
