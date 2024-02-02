@@ -104,14 +104,3 @@ def Custom_logout(request):
     logout(request)
     messages.info(request, "Logged out successfully! ")
     return redirect('home')
-
-# Add this decorator to ensure the view always returns an HttpResponse
-def ensure_response(view):
-    def wrapper(*args, **kwargs):
-        response = view(*args, **kwargs)
-        if response is None:
-            return HttpResponse(status=200)
-        return response
-    return wrapper
-
-Custom_logout = ensure_response(Custom_logout)

@@ -101,19 +101,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Course 1</td>
-                    <td>Module 1</td>
-                    <td>85</td>
-                    <td>Pass</td>
-                </tr>
-                <tr>
-                    <td>Course 2</td>
-                    <td>Module 2</td>
-                    <td>92</td>
-                    <td>Pass</td>
-                </tr>
-                <!-- Add more results dynamically based on the student's records -->
+                {% for result in results %}
+                    <tr>
+                        <td>{{ result.module.course.name }}</td>
+                        <td>{{ result.module.name }}</td>
+                        <td>{{ result.score }}</td>
+                        <td>{{ result.result_type }}</td>
+                    </tr>
+                {% endfor %}
+
             </tbody>
         </table>
 
