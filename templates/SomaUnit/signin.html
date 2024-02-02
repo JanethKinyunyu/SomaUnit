@@ -52,8 +52,15 @@
     </style>
 </head>
 <body>
+            <form method="post">
+               {% csrf_token %}
+               <div class="fv-row mb-8">
+                 {{ form.as_p }}
+               </div>
+               <button type="submit" class="btn btn-primary">Submit</button>
+           </form>
 
-    <form action="" method="post">
+    {% comment %} <form action="" method="post">
         {% csrf_token %} 
 
         
@@ -79,7 +86,7 @@
         </fieldset>
         
         
-    </form>
+    </form> {% endcomment %}
 
 </body>
 

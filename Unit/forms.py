@@ -23,9 +23,8 @@ class StudentRegistrationForm(UserCreationForm):
         return student
 
 class StudentAuthenticationForm(forms.Form):
-    pass
-#     username = forms.CharField()
-#     password = forms.CharField(widget=forms.PasswordInput)
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)
 
 class TeacherRegistrationForm(UserCreationForm):
     pass

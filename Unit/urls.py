@@ -14,5 +14,3 @@ urlpatterns = [
     # path('studets_dashboard', views.StudentDash, name='StudentDash' ),
     # path('teacher_dashboard', views.TeacherDash, name='teacherDash' ),
 ]
-
-
