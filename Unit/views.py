@@ -59,3 +59,9 @@ def home(request):
 
 def sign_up(request):
     return render(request, 'signup.html')
+
+def StudentDash(request):
+    return render(request, 'SomaUnit/dashboards/Student_dashboard.html')
+
+def TeacherDash(request):
+    return render(request, 'SomaUnit/dashboards/teacher_dashboard.html')
