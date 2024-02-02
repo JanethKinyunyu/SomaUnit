@@ -67,21 +67,6 @@ def sign_in(request):
     return render(request, 'SomaUnit/signin.html')
 
 
-@login_required
-def dashboards(request):
-    user = request.user
-
-    if hasattr(user, 'is_student'):
-        student = user.student
-        return render(request, 'SomaUnit/dashboards/student_dashboard.html', {'student': student})
-    elif hasattr(user, 'is_teacher'):
-        teacher = user.teacher
-        return render(request, 'SomaUnit/dashboards/teacher_dashboard.html', {'teacher': teacher})
-    else:
-        return render(request, 'SomaUnit/signin.html', {'error_message': 'Invalid user type'})
-
-
-
 def student_dashboard(request):
     try:    
         student = request.user.student
@@ -98,7 +83,7 @@ def student_dashboard(request):
         'results': results,
     }
 
-    return render(request, 'SomaUnit/dashboards/student_dashboard.html', context)
+    return render(request, 'SomaUnit/dashboards/Student_dashboard.html', context)
 
 
 
