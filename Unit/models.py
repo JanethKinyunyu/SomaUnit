@@ -12,6 +12,8 @@ class Student(models.Model):
         return f'{self.user.username} ({self.student_id})'
 
 class Teacher(models.Model):
+    first_name = models.CharField(max_length=255, blank=True, null=True)
+    last_name = models.CharField(max_length=255, blank=True, null=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):

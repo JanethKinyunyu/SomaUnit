@@ -18,4 +18,4 @@ class ModelAdmin(admin.ModelAdmin):
 
 @admin.register(Teacher)
 class TeacherAdmin(admin.ModelAdmin):
-    list_display = ['username']
+    list_display = ['first_name']
