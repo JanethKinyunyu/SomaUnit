@@ -1,0 +1,121 @@
+<!-- dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #666;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .module-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .module-list li {
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .result-table th, .result-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .result-table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Student Dashboard</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Courses</a>
+        <a href="#">Results</a>
+        <a href="#">Logout</a>
+    </nav>
+
+    <div class="container">
+
+        <h2>Your Modules</h2>
+        <ul class="module-list">
+            <li>Module 1: Introduction to Programming</li>
+            <li>Module 2: Web Development Basics</li>
+            <li>Module 3: Database Management</li>
+            <!-- Add more modules dynamically based on the student's enrolled courses -->
+        </ul>
+
+        <h2>Your Results</h2>
+        <table class="result-table">
+            <thead>
+                <tr>
+                    <th>Course</th>
+                    <th>Module</th>
+                    <th>Score</th>
+                    <th>Result Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Course 1</td>
+                    <td>Module 1</td>
+                    <td>85</td>
+                    <td>Pass</td>
+                </tr>
+                <tr>
+                    <td>Course 2</td>
+                    <td>Module 2</td>
+                    <td>92</td>
+                    <td>Pass</td>
+                </tr>
+                <!-- Add more results dynamically based on the student's records -->
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+</html>

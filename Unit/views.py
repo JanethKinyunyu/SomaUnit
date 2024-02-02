@@ -58,4 +58,4 @@ def home(request):
 
 
 def sign_up(request):
-    return render(request, 'SomaUnit/signup.html')
+    return render(request, 'signup.html')
