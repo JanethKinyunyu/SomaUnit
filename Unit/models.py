@@ -11,7 +11,7 @@ class Student(models.Model):
     
     USERNAME_FIELD = 'username'
     def __str__(self):
-        return f'{self.user.username} ({self.student_id})'
+        return f'{self.user.username}'
 
 class Teacher(models.Model):
     first_name = models.CharField(max_length=255)

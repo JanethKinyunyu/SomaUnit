@@ -18,10 +18,14 @@ class StudentRegistrationForm(UserCreationForm):
     def save(self, commit=True):
         user = super().save(commit=False)
         user.last_login = None
-        user.save()
-        student = Student.objects.create(user=user, first_name=self.cleaned_data['first_name'] ,middle_name=self.cleaned_data['middle_name'], last_name=self.cleaned_data['last_name'], enrolled_course=self.cleaned_data['enrolled_course'])
-        return student    
+        
+        if commit:
+            user.save()
 
+        student = Student.objects.create(user=user, first_name=self.cleaned_data['first_name'] ,middle_name=self.cleaned_data['middle_name'], last_name=self.cleaned_data['last_name'], enrolled_course=self.cleaned_data['enrolled_course'])
+        return student
+        
+        
 class StudentAuthenticationForm(forms.Form):
     pass
 #     username = forms.CharField()
