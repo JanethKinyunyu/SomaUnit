@@ -83,7 +83,7 @@ def dashboards(request):
 
 def student_dashboard(request):
     student = Student.objects.all()
-    return render(request, 'SomaUnit/dashboards/Student_dashboard.html', {'student', student})
+    return render(request, 'SomaUnit/dashboards/Student_dashboard.html', {'student': student})
 
 @login_required
 def Custom_logout(request):
