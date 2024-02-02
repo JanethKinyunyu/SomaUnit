@@ -3,8 +3,8 @@ from django.db import models
 
 class Student(models.Model):
     first_name = models.CharField(max_length=255)
-    Middle_name = models.CharField(max_length=255)
-    Last_name = models.CharField(max_length=255)
+    middle_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     student_id = models.CharField(max_length=10, unique=True, editable=False)
     enrolled_course = models.ForeignKey('Course', on_delete=models.PROTECT, null=True, blank=True)
