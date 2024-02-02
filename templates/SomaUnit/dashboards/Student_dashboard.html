@@ -81,7 +81,7 @@
     <div class="container">
 
         <h2>Hey {{ student.first_name }}</h2>
-        <h2>Course {{ student.Course }}</h2>
+        <h2>Course {{ enrolled_courses.first.name }}</h2>
         <h2>Verify Your Modules</h2>
         <ul class="module-list">
             {% for module in modules %}

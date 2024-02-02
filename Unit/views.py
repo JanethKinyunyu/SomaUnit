@@ -78,6 +78,7 @@ def student_dashboard(request):
     results = Result.objects.filter(student=student)
 
     context = {
+        'enrolled_courses': enrolled_courses,
         'student': student,
         'modules': modules,
         'results': results,
