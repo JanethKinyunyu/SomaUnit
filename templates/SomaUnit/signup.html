@@ -5,23 +5,25 @@
 
 <head>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
 
         form {
             background-color: #ffffff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            max-width: 600px; /* Set a max-width for better responsiveness */
+            margin: 0 auto; /* Center the form */
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .form-group label,
+        .form-group input {
+            width: 48%; /* Adjust the width as needed */
         }
 
         label {
@@ -33,7 +35,6 @@
         input {
             width: 100%;
             padding: 8px;
-            margin-bottom: 16px;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -53,16 +54,47 @@
 <body>
 
     <form action="/signup" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required placeholder="Enter your username">
+        
+        <fieldset>
+            <legend>Your Details</legend>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required placeholder="Enter your email">
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required placeholder="Enter your First name">
+        </div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required placeholder="Enter your password">
+        <div class="form-group">
+            <label for="middle_name">Middle Name:</label>
+            <input type="text" id="middle_name" name="middle_name" required placeholder="Enter your Middle name">
+        </div>
+
+        <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required placeholder="Enter your Last name">
+        </div>
+
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required placeholder="Enter your username">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+        </div>
+
+        <div class="form-group">
+            <label for="password1">Password:</label>
+            <input type="password" id="password1" name="password1" required placeholder="Enter your password">
+        </div>
+
+        <div class="form-group">
+            <label for="password2">Confirm Password:</label>
+            <input type="password" id="password2" name="password2" required placeholder="Repeat your password">
+        </div>
 
         <button type="submit">Sign Up</button>
+    </fieldset>
     </form>
 
 </body>
