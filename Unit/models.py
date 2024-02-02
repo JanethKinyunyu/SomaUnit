@@ -6,7 +6,6 @@ class Student(models.Model):
     middle_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    student_id = models.IntegerField(max_length=10, unique=True, editable=False)
     enrolled_course = models.ForeignKey('Course', on_delete=models.PROTECT, null=True, blank=True)
     is_student = models.BooleanField(default=True)
     
