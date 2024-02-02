@@ -7,8 +7,8 @@ class StudentRegistrationForm(UserCreationForm):
     # pass
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'middle_name', 'last_name', 'is_student', 'enrolled_course', 'password1', 'password2']
-        
+        fields = ['username', 'first_name', 'middle_name', 'last_name', 'is_student', 'student_id', 'enrolled_course', 'password1', 'password2']
+
     first_name = forms.CharField(max_length=255)
     middle_name = forms.CharField(max_length=255)
     last_name = forms.CharField(max_length=255)

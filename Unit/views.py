@@ -81,8 +81,9 @@ def dashboards(request):
         return render(request, 'SomaUnit/signin.html', {'error_message': 'Invalid user type'})
 
 
-def TeacherDash(request):
-    return render(request, 'SomaUnit/dashboards/teacher_dashboard.html')
+def student_dashboard(request):
+    student = Student.objects.all()
+    return render(request, 'SomaUnit/dashboards/Student_dashboard.html', {'student', student})
 
 @login_required
 def Custom_logout(request):
