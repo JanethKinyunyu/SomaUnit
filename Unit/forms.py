@@ -12,7 +12,7 @@ class StudentRegistrationForm(UserCreationForm):
     first_name = forms.CharField(max_length=255)
     middle_name = forms.CharField(max_length=255)
     last_name = forms.CharField(max_length=255)
-    student_id = forms.IntegerField(max_length=10, unique=True)
+    student_id = forms.IntegerField()
     enrolled_course = forms.ModelChoiceField(queryset=Course.objects.all())  # Adjust the queryset accordingly
     is_student = forms.BooleanField(initial=True, widget=forms.HiddenInput(), required=False)
 
