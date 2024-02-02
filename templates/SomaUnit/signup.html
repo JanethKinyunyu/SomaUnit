@@ -53,8 +53,9 @@
 </head>
 <body>
 
-    <form action="/signup" method="post">
-        
+    <form action="" method="post">
+        {% csrf_token %} 
+
         <fieldset>
             <legend>Your Details</legend>
 
