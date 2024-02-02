@@ -6,10 +6,13 @@ from . import views
 # app_name = 'Unit'
 
 urlpatterns = [
-    path('', views.home, name='home' ),
-    path('sign_up', views.sign_up, name='sign_up' ),
-    path('studets_dashboard', views.StudentDash, name='StudentDash' ),
-    path('teacher_dashboard', views.TeacherDash, name='teacherDash' ),
+    path('', views.home, name='home'),
+    path('sign_up', views.student_registration, name='sign_up'),
+    path('sign_in', views.student_login, name='sign_in'),
+    path('dashboard', views.dashboards, name='dashboard'),
+    path('logout', views.logout, name='logout'),
+    # path('studets_dashboard', views.StudentDash, name='StudentDash' ),
+    # path('teacher_dashboard', views.TeacherDash, name='teacherDash' ),
 ]
 
 

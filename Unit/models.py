@@ -8,7 +8,9 @@ class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     student_id = models.CharField(max_length=10, unique=True, editable=False)
     enrolled_course = models.ForeignKey('Course', on_delete=models.PROTECT, null=True, blank=True)
+    is_student = models.BooleanField(default=True)
     
+    USERNAME_FIELD = 'username'
     def __str__(self):
         return f'{self.user.username} ({self.student_id})'
 
@@ -16,7 +18,7 @@ class Teacher(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    is_staff = models.BooleanField(default=True)
+    is_teacher = models.BooleanField(default=True)
 
     def __str__(self):
         return self.user.username

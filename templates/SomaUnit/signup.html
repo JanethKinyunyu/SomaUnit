@@ -53,7 +53,15 @@
 </head>
 <body>
 
-    <form action="" method="post">
+<form method="post">
+               {% csrf_token %}
+               <div class="fv-row mb-8">
+                 {{ form.as_p }}
+               </div>
+               <button type="submit" class="btn btn-primary">Submit</button>
+           </form>
+
+    {% comment %} <form action="{% url 'sign_up' %}" method="post">
         {% csrf_token %} 
 
         <fieldset>
@@ -96,7 +104,7 @@
 
         <button type="submit">Sign Up</button>
     </fieldset>
-    </form>
+    </form> {% endcomment %}
 
 </body>
 

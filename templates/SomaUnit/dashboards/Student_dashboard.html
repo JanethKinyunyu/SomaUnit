@@ -72,14 +72,15 @@
     </header>
 
     <nav>
-        <a href="#">Home</a>
+        <a href="{% url 'home' %}">Home</a>
         <a href="#">Courses</a>
         <a href="#">Results</a>
-        <a href="#">Logout</a>
+        <a href="{% url 'logout' %}">Logout</a>
     </nav>
 
     <div class="container">
 
+        <h2>Hey {{ student.username }}</h2>
         <h2>Your Modules</h2>
         <ul class="module-list">
             <li>Module 1: Introduction to Programming</li>

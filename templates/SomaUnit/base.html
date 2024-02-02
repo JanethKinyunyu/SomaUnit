@@ -11,16 +11,18 @@
     <header>
       <div class="logo">
         <!-- Your logo or site name -->
-        Soma Unit.
+        <center>
+          Soma Unit.
+        </center>
       </div>
       <nav>
         <!-- Navigation links if needed -->
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="HTML/dashboard.html">Dashboard</a></li>
-          <li><a href="HTML/workouts.html">Workouts</a></li>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'dashboard' %}">My Dashboard</a></li>
+          <li><a href="#">About SomaUnit</a></li>
           <li>
-            <a href="HTML/profile.html"><img src="images/5.svg" alt="User Icon" />Profile</a>
+            <!-- <a href="HTML/profile.html"><img src="images/5.svg" alt="User Icon" />Profile</a> -->
           </li>
         </ul>
       </nav>

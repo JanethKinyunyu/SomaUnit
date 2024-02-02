@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.contrib import messages
+from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.decorators import login_required
 from .forms import StudentRegistrationForm, TeacherRegistrationForm, StudentAuthenticationForm, TeacherAuthenticationForm
+from .models import Student, Teacher, Course, Module
 
 def student_registration(request):
     if request.method == 'POST':
@@ -11,7 +14,7 @@ def student_registration(request):
             return redirect('dashboard')  # the dashboard view
     else:
         form = StudentRegistrationForm()
-    return render(request, 'student_registration.html', {'form': form})
+    return render(request, 'SomaUnit/signup.html', {'form': form})
 
 def teacher_registration(request):
     if request.method == 'POST':
@@ -33,10 +36,10 @@ def student_login(request):
             user = authenticate(request, username=username, password=password)
             if user:
                 login(request, user)
-                return redirect('dashboard')  # the dashboard view
+                return redirect('StudentDash')  # the dashboard view
     else:
         form = StudentAuthenticationForm()
-    return render(request, 'student_login.html', {'form': form})
+    return render(request, 'SomaUnit/dashboards/Student_dashboard.html', {'form': form})
 
 def teacher_login(request):
     if request.method == 'POST':
@@ -60,8 +63,29 @@ def home(request):
 def sign_up(request):
     return render(request, 'SomaUnit/signup.html')
 
-def StudentDash(request):
-    return render(request, 'SomaUnit/dashboards/Student_dashboard.html')
+def sign_in(request):
+    return render(request, 'SomaUnit/signin.html')
+
+
+@login_required
+def dashboards(request):
+    user = request.user
+
+    if hasattr(user, 'is_student'):
+        student = user.student
+        return render(request, 'SomaUnit/dashboards/student_dashboard.html', {'student': student})
+    elif hasattr(user, 'is_teacher'):
+        teacher = user.teacher
+        return render(request, 'SomaUnit/dashboards/teacher_dashboard.html', {'teacher': teacher})
+    else:
+        return render(request, 'SomaUnit/signin.html', {'error_message': 'Invalid user type'})
+
 
 def TeacherDash(request):
     return render(request, 'SomaUnit/dashboards/teacher_dashboard.html')
+
+@login_required
+def Custom_logout(request):
+    logout(request)
+    messages.info(request, "Logged out successfully! ")
+    return redirect('home')
