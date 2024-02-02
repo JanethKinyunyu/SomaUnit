@@ -7,6 +7,7 @@ class Student(models.Model):
     Last_name = models.CharField(max_length=255)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     student_id = models.CharField(max_length=10, unique=True, editable=False)
+    enrolled_course = models.ForeignKey('Course', on_delete=models.PROTECT, null=True, blank=True)
     
     def __str__(self):
         return f'{self.user.username} ({self.student_id})'
@@ -22,7 +23,7 @@ class Teacher(models.Model):
 class Module(models.Model):
     name = models.CharField(max_length=100)
     code = models.CharField(max_length=10, unique=True)
-    modules = models.ManyToManyField('Course')
+    course = models.ForeignKey('Course', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.name
@@ -31,7 +32,7 @@ class Course(models.Model):
     name = models.CharField(max_length=100)
 
     def __str__(self):
-        return f'{self.name} ({self.code})'
+        return f'{self.name}'
 
 
 
