@@ -15,16 +15,16 @@ class StudentRegistrationForm(UserCreationForm):
     enrolled_course = forms.ModelChoiceField(queryset=Course.objects.all())  # Adjust the queryset accordingly
     is_student = forms.BooleanField(initial=True, widget=forms.HiddenInput(), required=False)
 
-    def save(self, commit=True):
-        user = super().save(commit=False)
-        user.last_login = None
-        
-        if commit:
-            user.save()
+    # def save(self, commit=True):
+    #     user = super().save(commit=False)
+    #     student = Student.objects.create(user=user, first_name=self.cleaned_data['first_name'] ,middle_name=self.cleaned_data['middle_name'], last_name=self.cleaned_data['last_name'], enrolled_course=self.cleaned_data['enrolled_course'])
+    #     return student
 
-        student = Student.objects.create(user=user, first_name=self.cleaned_data['first_name'] ,middle_name=self.cleaned_data['middle_name'], last_name=self.cleaned_data['last_name'], enrolled_course=self.cleaned_data['enrolled_course'])
-        return student
-        
+    def save(self, *args, **kwargs):
+        # Exclude the last_login field when saving the User instance
+        self.user.last_login = None
+        self.user.save(update_fields=["last_login"])
+        super().save(*args, **kwargs)    
         
 class StudentAuthenticationForm(forms.Form):
     pass
