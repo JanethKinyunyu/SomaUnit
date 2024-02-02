@@ -19,7 +19,7 @@
 }
 
 body{
-    background-image: url('../images/bg.jpeg');
+    background-image: url('{% static "assets/img/one.jpeg" %}');
     background-size:auto;
     background-position: center;
     font-family: arial, sans-serif;
