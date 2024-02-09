@@ -94,10 +94,6 @@ def Custom_logout(request):
     messages.info(request, "Logged out successfully! ")
     return redirect('home')
 
-from django.contrib.auth import logout
-from django.shortcuts import redirect
-from django.contrib import messages
-from django.http import HttpResponse  # Import HttpResponse
 
 @login_required
 def Custom_logout(request):
